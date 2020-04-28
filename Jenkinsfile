@@ -86,7 +86,7 @@ try
                 }
                 bat 'docker push venky1822/angular8-example-app:7.0.2'
             }
-
+            // stops a container that running and starts it again
             stage('docker run')
             {
                 // def dockrRun = 'docker run -p 8080:80 -d --name my-app venky1822/angular8-example-app:7.0.0'
