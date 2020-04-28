@@ -1,10 +1,3 @@
-
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> e0390d8cdab2dbf616848facfa0cdb5b1216a52f
 import java.text.SimpleDateFormat
 def Version = null
 def FileName = null
@@ -70,47 +63,7 @@ try
                 // checkout the code from git tfs to the workspace.
                 checkout scm
             }
-            stage('Docker Building')
-            {
-                //   dir('C://Program Files (x86)//Jenkins//workspace//Empmgmt_CI')
-                //  {
-                     bat 'docker build -t venky1822/angular8-example-app:7.0.2 .'
-                //  }
-            }
-
-
-            stage('Docker login')
-            {
-                withCredentials([string(credentialsId: 'dkrpwd', variable: 'DkrPwd')]) {
-                    bat "docker login -u venky1822 -p Venky1822"
-                }
-                bat 'docker push venky1822/angular8-example-app:7.0.2'
-            }
-            // stops a container that running and starts it again
-            stage('docker run')
-            {
-                // def dockrRun = 'docker run -p 8080:80 -d --name my-app venky1822/angular8-example-app:7.0.0'
-                // sshagent(['ec2']) {
-                bat 'docker stop newcontainer1'
-                bat 'docker rm newcontainer1'
-                bat "docker run  --name newcontainer1 -d -P venky1822/angular8-example-app:7.0.2"
-                // }
-            }
-
-
-            // stage('docker run')
-            // {
-            //     bat 'docker run -p 8083:80 venky1822/angular8-example-app:7.0.0'
-            // }
-            // stage('docker stop')
-            // {
-            //     bat 'docker stop venky1822/angular8-example-app:7.0.0'
-            // }
-            stage('port num')
-            {
-                def port= bat 'docker port newcontainer1'
-            }
-
+            
 //
 
 
