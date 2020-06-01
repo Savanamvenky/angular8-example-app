@@ -77,7 +77,7 @@ try
             //     // {
             //         bat 'docker run -it -p 8083:80 angular8-example-app'
             //     // }
-            // }
+            // }//
 
             // def zipFileName="$FileName"+".zip"
             // def MSTestParam = tool 'VSTestTools_MSTest'
